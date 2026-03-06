@@ -1,4 +1,4 @@
-# Pricing
+﻿# Pricing
 
 Planned public plan tiers:
 
@@ -6,5 +6,4 @@ Planned public plan tiers:
 - Pro
 - Enterprise (future)
 
-Stripe pricing objects must be configured separately.
-
+Final plan availability, pricing, and billing configuration are managed separately.

@@ -1,4 +1,5 @@
-# About MarSci Diagnostics
+﻿# Product Overview
 
-MarSci Diagnostics is a SaaS platform for diagnosing marketing system behavior and exposing safe, actionable public outputs without disclosing protected internal logic.
+MarSci Diagnostics is a KPI Diagnostic System for marketing performance analysis.
 
+The product helps teams interpret performance signals, understand likely system conditions, and review structured diagnostic outputs in a product-safe presentation format.

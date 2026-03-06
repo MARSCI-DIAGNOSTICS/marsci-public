@@ -1,5 +1,4 @@
-
-MARSCI DIAGNOSTICS
+﻿MARSCI DIAGNOSTICS
 OFFICIAL COLOR SYSTEM SPECIFICATION
 Version 1.2 — COMPLETE DESIGN STANDARD
 Status: Locked Production Specification
@@ -8,15 +7,15 @@ Purpose
 This specification defines the complete color architecture
 for MarSci Diagnostics.
 
-The system is designed for an analytics SaaS product where
+The system is designed for a software product interface where
 
 • brand authority must be preserved
-• dashboards must remain readable during long analytical sessions
+• long analytical review sessions must remain readable
 • chart data must remain interpretable
 • UI behavior must remain consistent across the product
 
 This document defines every color layer required for a
-production analytics platform.
+production product interface.
 
 The system contains the following layers
 
@@ -50,7 +49,7 @@ Usage
 • global backgrounds
 • navigation
 • hero sections
-• dark dashboards
+• dark interface surfaces
 
 Meaning
 Authority
@@ -501,3 +500,4 @@ Chart palette
 ────────────────────────────────
 END OF COLOR SYSTEM SPEC
 ────────────────────────────────
+

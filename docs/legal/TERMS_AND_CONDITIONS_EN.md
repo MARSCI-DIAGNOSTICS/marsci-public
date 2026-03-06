@@ -1,4 +1,4 @@
-# Terms and Conditions
+﻿# Terms and Conditions
 
 Last updated: March 6, 2026
 Version: terms_v1_0_0
@@ -32,8 +32,8 @@ You may not:
 - interfere with or disrupt the service;
 - bypass access controls or rate limits;
 - scrape, extract, or bulk copy protected product outputs beyond permitted use;
-- reverse engineer the product, hidden rule systems, pattern methods, or underlying logic;
-- attempt model extraction or systematic reconstruction of diagnostic logic or internal methods;
+- reverse engineer the product, non-public implementation materials, or underlying service behavior;
+- attempt reconstruction of non-public product materials or service behavior;
 - reproduce, resell, sublicense, or redistribute the service without authorization;
 - upload or process information you do not have the right to use;
 - use the service in a manner that violates advertising platform policies; or
@@ -61,9 +61,9 @@ Refund rules are not finalized. Refunds, if offered, will be governed by the ref
 
 ## 8. Intellectual Property
 
-MarSci Diagnostics and its related software, methods, pattern systems, projections, diagnostic structures, interfaces, documentation, and associated materials are owned by MarSci Diagnostics or its licensors.
+MarSci Diagnostics and its related software, interfaces, documentation, proprietary technology, and associated materials are owned by MarSci Diagnostics or its licensors.
 
-This includes protected internal logic that may not be fully exposed in public outputs. Public KPI output may intentionally hide portions of internal methodology, internal signals, or projection choices for intellectual property and system integrity reasons.
+This includes non-public product materials that are not included in public outputs.
 
 Except for limited rights required to use the service as provided, no rights are granted to you in the underlying product, methodology, or source materials.
 
@@ -75,7 +75,7 @@ The service is:
 
 - not a CRM;
 - not a media buying platform;
-- not a bid automation tool;
+- not an automated execution tool;
 - not a consumer social network; and
 - not a medical, legal, or financial advisory platform.
 
@@ -153,3 +153,6 @@ For questions regarding these Terms, contact:
 
 - support@marsci-diagnostics.com
 - admin@marsci-diagnostics.com
+
+
+

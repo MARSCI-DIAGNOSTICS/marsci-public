@@ -1,4 +1,4 @@
-# Privacy Policy
+﻿# Privacy Policy
 
 Last updated: March 6, 2026
 Version: privacy_v1_0_0
@@ -87,11 +87,11 @@ Stripe provides checkout and billing services for MarSci Diagnostics. When you p
 
 We do not intend to store full card numbers, card security codes, or full payment instrument details in our own systems.
 
-## 9. Cookies and Analytics
+## 9. Cookies and Similar Technologies
 
-MarSci Diagnostics may use cookies, local storage, or similar technologies for authentication, session handling, security, and service performance. Analytics tooling, if added, may also use cookies or similar technologies.
+MarSci Diagnostics may use cookies, local storage, or similar technologies for authentication, session handling, security, and service performance. Additional usage-measurement or service-monitoring tools, if added, may also use cookies or similar technologies.
 
-The exact analytics and cookie setup may change over time. Where applicable, additional notices or controls may be provided when available.
+The exact cookie and service-measurement setup may change over time. Where applicable, additional notices or controls may be provided when available.
 
 ## 10. Data Retention
 
@@ -112,7 +112,7 @@ We may share personal data with service providers and infrastructure vendors tha
 - billing,
 - hosting,
 - logging,
-- analytics,
+- service measurement,
 - support, and
 - email delivery.
 
@@ -167,3 +167,4 @@ For privacy questions or requests, contact:
 
 - support@marsci-diagnostics.com
 - admin@marsci-diagnostics.com
+

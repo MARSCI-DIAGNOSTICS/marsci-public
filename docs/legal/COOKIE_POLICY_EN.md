@@ -1,4 +1,4 @@
-# Cookie Policy
+﻿# Cookie Policy
 
 Last updated: March 6, 2026
 
@@ -16,7 +16,7 @@ MarSci Diagnostics may use cookies or similar technologies for:
 - authentication and login state;
 - session management;
 - security and abuse prevention; and
-- limited analytics or performance monitoring where implemented.
+- limited service measurement or performance monitoring where implemented.
 
 ## 3. Essential Cookies
 
@@ -41,9 +41,9 @@ Session-related cookies or similar storage may be used to:
 - maintain temporary request state; and
 - support basic product navigation and session integrity.
 
-## 6. Analytics
+## 6. Usage Measurement
 
-Analytics tools may be added later. If analytics are used, they may rely on cookies or similar technologies to measure product usage, stability, and performance. The exact tools are not finalized in this draft.
+Additional usage-measurement tools may be added later. If used, they may rely on cookies or similar technologies to measure product usage, stability, and performance. The exact tools are not finalized in this draft.
 
 ## 7. Cookie Consent
 
@@ -63,3 +63,4 @@ For questions, contact:
 
 - support@marsci-diagnostics.com
 - admin@marsci-diagnostics.com
+

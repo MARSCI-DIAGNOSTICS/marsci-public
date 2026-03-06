@@ -1,10 +1,9 @@
-# FAQ
+﻿# FAQ
 
 ## Is MarSci Diagnostics a media buying platform?
 
-No. It is a diagnostics platform.
+No. It is a KPI Diagnostic System.
 
-## Does it hide part of the logic?
+## How are results presented to users?
 
-Yes. Public outputs intentionally hide part of the internal diagnostic structure for IP protection.
-
+Results are presented in a product-safe format designed for clear interpretation and decision support.

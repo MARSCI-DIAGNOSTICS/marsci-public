@@ -1,4 +1,4 @@
-# Data Processing Agreement
+﻿# Data Processing Agreement
 
 Last updated: March 6, 2026
 
@@ -67,7 +67,7 @@ MarSci Diagnostics may use sub-processors and service providers to operate the s
 - authentication
 - billing
 - logging
-- analytics
+- service measurement
 - email delivery
 - support tooling
 
@@ -90,4 +90,5 @@ Initial notice may be limited and supplemented later as more information becomes
 Upon termination of the applicable services, MarSci Diagnostics may delete or return Customer data where contractually required, operationally available, and legally permissible. Certain data may be retained for legal, accounting, audit, security, fraud prevention, or operational integrity reasons.
 
 Deletion and return workflows are subject to actual technical implementation and legal constraints in effect at the relevant time.
+
 

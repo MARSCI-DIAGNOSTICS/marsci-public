@@ -1,6 +1,5 @@
-# Use Cases
+﻿# Use Cases
 
 - Review diagnostic results for campaign health
-- Compare visible KPI symptoms with fix guidance
-- Operate diagnostic workflows without exposing protected internal engine logic
-
+- Compare visible KPI symptoms with recommended actions
+- Use diagnostic workflows through a product-safe result presentation

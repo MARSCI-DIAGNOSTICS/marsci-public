@@ -1,38 +1,22 @@
 ﻿# MarSci Diagnostics Architecture Overview
 
-MarSci Diagnostics operates as a KPI Diagnostic System.
+MarSci Diagnostics is a KPI Diagnostic System.
 
-## Public Architecture Layers
+## Public Architecture Overview
 
-1. Data Input Layer
+1. Input Layer
 - user-provided datasets
-- approved platform integrations
-- account-level performance signals
+- supported product inputs
+- account-level performance information
 
-2. Diagnostic Layer
-- proprietary diagnostic engine
-- internal signal analysis
-- pattern recognition layer
-- structured diagnostic methodology
+2. Diagnostic Output Layer
+- structured diagnostic outputs
+- product-safe result presentation
 
-3. Public Output Layer
-- diagnostic summaries
-- symptom indicators
-- probable causes
-- recommended corrective actions
-- normalization targets
-
-4. Product Surface Layer
+3. Product Surface Layer
 - web application
-- spreadsheet extensions
 - account and billing interfaces
 
-## IP Protection Boundary
+## Public Boundary
 
-This public repository does not include:
-- internal rule structures
-- pattern signature logic
-- KPI combination logic
-- detection thresholds
-- classification algorithms
-- decision routing internals
+This public repository is limited to public-facing documentation, legal pages, brand materials, and interface-level product information.
