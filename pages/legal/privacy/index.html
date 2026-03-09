@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — MarSci Diagnostics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:       #0D1B2A;
+      --navy-mid:   #162236;
+      --navy-soft:  #1E3050;
+      --brass:      #B8893A;
+      --brass-light:#D4A855;
+      --cream:      #F5F1EA;
+      --cream-dark: #EDE8DF;
+      --text:       #1C2B3A;
+      --text-muted: #6B7C8D;
+      --border:     #D8D2C8;
+      --white:      #FFFFFF;
+      --sidebar-w:  260px;
+      --content-max:720px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid var(--navy-soft);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--brass-light);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-links .nav-cta {
+      background: var(--brass);
+      color: var(--white);
+      padding: 7px 18px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .nav-links .nav-cta:hover { background: var(--brass-light); }
+
+    /* ── HERO BAND ── */
+    .legal-hero {
+      background: var(--navy);
+      padding: 56px 40px 48px;
+      border-bottom: 1px solid rgba(184,137,58,0.25);
+    }
+
+    .legal-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .legal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      margin-bottom: 20px;
+    }
+
+    .legal-badge::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--brass);
+    }
+
+    .legal-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .legal-meta {
+      color: rgba(255,255,255,0.45);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .legal-meta strong {
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 76px;
+    }
+
+    .toc-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .toc-list {
+      list-style: none;
+      border-left: 2px solid var(--border);
+    }
+
+    .toc-list li { position: relative; }
+
+    .toc-list a {
+      display: block;
+      padding: 8px 0 8px 18px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+      line-height: 1.4;
+    }
+
+    .toc-list a:hover { color: var(--text); }
+
+    .toc-list a.active {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .toc-list li::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--brass);
+      transform: scaleY(0);
+      transition: transform 0.25s ease;
+      transform-origin: top;
+    }
+
+    .toc-list li:has(a.active)::before {
+      transform: scaleY(1);
+    }
+
+    .toc-num {
+      display: inline-block;
+      width: 20px;
+      font-size: 10px;
+      color: var(--brass);
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    /* ── MOBILE TOC ── */
+    .mobile-toc {
+      display: none;
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .mobile-toc-toggle {
+      width: 100%;
+      padding: 14px 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .mobile-toc-toggle svg {
+      transition: transform 0.25s;
+    }
+
+    .mobile-toc-toggle.open svg {
+      transform: rotate(180deg);
+    }
+
+    .mobile-toc-body {
+      display: none;
+      padding: 0 18px 14px;
+    }
+
+    .mobile-toc-body.open { display: block; }
+
+    .mobile-toc-body ol {
+      padding-left: 18px;
+    }
+
+    .mobile-toc-body li {
+      margin-bottom: 6px;
+    }
+
+    .mobile-toc-body a {
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .mobile-toc-body a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: var(--content-max);
+    }
+
+    .section {
+      margin-bottom: 56px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--brass);
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      color: var(--text);
+      font-size: 15.5px;
+      line-height: 1.8;
+      margin-bottom: 14px;
+      font-weight: 300;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    .section li {
+      font-size: 15.5px;
+      line-height: 1.8;
+      margin-bottom: 6px;
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    .section strong {
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .highlight-box {
+      background: var(--navy);
+      border-left: 3px solid var(--brass);
+      border-radius: 0 6px 6px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      color: rgba(255,255,255,0.85);
+      font-size: 14.5px;
+      margin: 0;
+    }
+
+    .highlight-box strong {
+      color: var(--brass-light);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .tag {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: 12.5px;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-top: 12px;
+    }
+
+    .contact-card p {
+      margin-bottom: 6px;
+    }
+
+    .contact-card a {
+      color: var(--brass);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--navy-soft);
+      padding: 32px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-links a.active-page {
+      color: var(--brass-light);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 32px 24px 60px;
+      }
+
+      .sidebar { display: none; }
+
+      .mobile-toc { display: block; }
+
+      .legal-hero { padding: 40px 24px 36px; }
+
+      nav { padding: 0 24px; }
+
+      .nav-links { gap: 20px; }
+
+      footer { padding: 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links .hide-mobile { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">MarSci <span>Diagnostics</span></a>
+    <ul class="nav-links">
+      <li class="hide-mobile"><a href="/">Home</a></li>
+      <li class="hide-mobile"><a href="/features">Features</a></li>
+      <li class="hide-mobile"><a href="/pricing">Pricing</a></li>
+      <li><a href="https://api.marsci-diagnostics.com/api/oauth/login" class="nav-cta">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-badge">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="legal-meta">Last updated: <strong>March 10, 2026</strong></p>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- DESKTOP SIDEBAR -->
+  <aside class="sidebar">
+    <div class="toc-label">Contents</div>
+    <ol class="toc-list">
+      <li><a href="#collect"><span class="toc-num">01</span> Information We Collect</a></li>
+      <li><a href="#use"><span class="toc-num">02</span> How We Use Your Information</a></li>
+      <li><a href="#sharing"><span class="toc-num">03</span> Data Sharing</a></li>
+      <li><a href="#integrations"><span class="toc-num">04</span> Third-Party Integrations</a></li>
+      <li><a href="#retention"><span class="toc-num">05</span> Data Retention</a></li>
+      <li><a href="#rights"><span class="toc-num">06</span> Your Rights</a></li>
+      <li><a href="#cookies"><span class="toc-num">07</span> Cookies</a></li>
+      <li><a href="#security"><span class="toc-num">08</span> Security</a></li>
+      <li><a href="#contact"><span class="toc-num">09</span> Contact Us</a></li>
+    </ol>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- Mobile TOC -->
+    <div class="mobile-toc">
+      <button class="mobile-toc-toggle" onclick="toggleMobileToc(this)">
+        Jump to section
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="mobile-toc-body" id="mobileTocBody">
+        <ol>
+          <li><a href="#collect">Information We Collect</a></li>
+          <li><a href="#use">How We Use Your Information</a></li>
+          <li><a href="#sharing">Data Sharing</a></li>
+          <li><a href="#integrations">Third-Party Integrations</a></li>
+          <li><a href="#retention">Data Retention</a></li>
+          <li><a href="#rights">Your Rights</a></li>
+          <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="section" style="margin-bottom:40px;">
+      <p>MarSci Diagnostics ("we", "our", or "us") is committed to protecting your personal information. This Privacy Policy explains what data we collect, how we use it, and your rights as a user of <strong>app.marsci-diagnostics.com</strong>.</p>
+      <p>By using our service, you agree to the collection and use of information as described in this policy.</p>
+    </div>
+
+    <!-- 1. Information We Collect -->
+    <div class="section" id="collect">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Information We Collect</h2>
+      </div>
+      <p>We collect only what is necessary to provide the diagnostic service.</p>
+
+      <p><strong>Account Information</strong><br>
+      When you create an account via Google or Facebook OAuth, we receive your name, email address, and profile photo from that provider. We do not receive or store your social media password.</p>
+
+      <p><strong>Ad Platform Data (via OAuth)</strong><br>
+      To run diagnostics, we request read-only access to your connected advertising accounts (Meta Ads, Google Ads). We collect campaign performance metrics such as impressions, clicks, spend, conversions, CTR, and CPM. We never request write permissions.</p>
+
+      <p><strong>Usage Data</strong><br>
+      We collect anonymized interaction logs — pages visited, diagnostic reports generated, features used — to improve the product experience. This data does not include ad campaign content.</p>
+
+      <div class="tag-row">
+        <span class="tag">Account info</span>
+        <span class="tag">Ad performance metrics</span>
+        <span class="tag">Usage analytics</span>
+      </div>
+    </div>
+
+    <!-- 2. How We Use -->
+    <div class="section" id="use">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>How We Use Your Information</h2>
+      </div>
+      <ul>
+        <li><strong>Run diagnostics</strong> — Your ad performance data is processed by our inference engine to detect patterns, anomalies, and optimization opportunities.</li>
+        <li><strong>Generate reports</strong> — Diagnostic results are compiled into structured reports delivered within the platform and optionally by email.</li>
+        <li><strong>Improve the product</strong> — Aggregated, anonymized usage data is used to improve detection accuracy and develop new features.</li>
+        <li><strong>Customer support</strong> — Account and contact information is used to respond to support requests.</li>
+        <li><strong>Billing</strong> — Email is shared with Stripe (our payment processor) to manage subscriptions and invoices.</li>
+      </ul>
+      <div class="highlight-box">
+        <p>We <strong>do not</strong> sell your data, use it for advertising, or share it with third parties for marketing purposes.</p>
+      </div>
+    </div>
+
+    <!-- 3. Data Sharing -->
+    <div class="section" id="sharing">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Data Sharing</h2>
+      </div>
+      <p>We do not sell, rent, or trade your personal information or ad data to any third party.</p>
+      <p>We share data only with the following categories of service providers, all bound by confidentiality agreements:</p>
+      <ul>
+        <li><strong>Cloudflare</strong> — CDN, DNS, and edge compute infrastructure</li>
+        <li><strong>Stripe</strong> — Payment processing and subscription management</li>
+        <li><strong>Cloud storage providers</strong> — Encrypted data storage (data at rest)</li>
+      </ul>
+      <p>All service providers are contractually required to process data only as instructed by us and may not use your data for their own purposes.</p>
+    </div>
+
+    <!-- 4. Third-Party Integrations -->
+    <div class="section" id="integrations">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Third-Party Integrations</h2>
+      </div>
+      <p>MarSci Diagnostics connects to the following advertising platforms via standard OAuth 2.0 authorization:</p>
+      <ul>
+        <li><strong>Meta Ads (Facebook/Instagram)</strong> — Read-only access to campaign insights</li>
+        <li><strong>Google Ads</strong> — Read-only access to campaign performance data</li>
+      </ul>
+      <div class="highlight-box">
+        <p><strong>Important:</strong> We only request <strong>read</strong> permissions from these platforms. We never write to, modify, pause, or delete your campaigns. You can revoke our access at any time through your Meta or Google account settings.</p>
+      </div>
+      <p>These platforms have their own privacy policies. We encourage you to review them: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener" style="color:var(--brass);text-decoration:none;font-weight:500;">Meta Privacy Policy</a> · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--brass);text-decoration:none;font-weight:500;">Google Privacy Policy</a></p>
+    </div>
+
+    <!-- 5. Data Retention -->
+    <div class="section" id="retention">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Data Retention</h2>
+      </div>
+      <ul>
+        <li><strong>Active accounts</strong> — Data is retained for as long as your account is active and for a reasonable period thereafter to support re-activation or disputes.</li>
+        <li><strong>Account deletion</strong> — When you request account deletion, all personal data and ad performance data associated with your account will be permanently purged within <strong>30 days</strong>.</li>
+        <li><strong>Billing records</strong> — Transaction records may be retained for up to 7 years as required by tax and financial regulations.</li>
+        <li><strong>Diagnostic logs</strong> — Anonymized, aggregated diagnostic records with no personal identifiers may be retained indefinitely for product improvement.</li>
+      </ul>
+    </div>
+
+    <!-- 6. Your Rights -->
+    <div class="section" id="rights">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2>Your Rights</h2>
+      </div>
+      <p>You have the following rights with respect to your personal data:</p>
+      <ul>
+        <li><strong>Access</strong> — Request a copy of the personal data we hold about you.</li>
+        <li><strong>Correction</strong> — Request correction of inaccurate or incomplete data.</li>
+        <li><strong>Deletion</strong> — Request deletion of your account and all associated data.</li>
+        <li><strong>Export</strong> — Request a structured, machine-readable export of your diagnostic history.</li>
+        <li><strong>Revoke integration access</strong> — Disconnect your Meta or Google Ads accounts at any time from the platform settings.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:hello@marsci-diagnostics.com" style="color:var(--brass);text-decoration:none;font-weight:500;">hello@marsci-diagnostics.com</a>. We will respond within 30 days.</p>
+    </div>
+
+    <!-- 7. Cookies -->
+    <div class="section" id="cookies">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2>Cookies</h2>
+      </div>
+      <p>We use only essential cookies required for the service to function:</p>
+      <ul>
+        <li><strong>Session cookies</strong> — To keep you logged in during your session.</li>
+        <li><strong>CSRF tokens</strong> — To protect form submissions against cross-site request forgery.</li>
+      </ul>
+      <p>We do not use advertising cookies, tracking pixels, or third-party analytics cookies. We do not use Google Analytics or similar tracking services.</p>
+      <div class="highlight-box">
+        <p>No cookie consent banner is required because we only use <strong>strictly necessary</strong> cookies.</p>
+      </div>
+    </div>
+
+    <!-- 8. Security -->
+    <div class="section" id="security">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2>Security</h2>
+      </div>
+      <p>We take the security of your data seriously and implement the following measures:</p>
+      <ul>
+        <li><strong>Encryption in transit</strong> — All data transmitted between your browser and our servers is encrypted using TLS 1.2 or higher.</li>
+        <li><strong>Encryption at rest</strong> — Stored data is encrypted using AES-256 encryption.</li>
+        <li><strong>Access control</strong> — Access to production systems is limited to authorized personnel and protected by multi-factor authentication.</li>
+        <li><strong>OAuth tokens</strong> — Ad platform OAuth tokens are stored encrypted and are never logged in plaintext.</li>
+        <li><strong>Incident response</strong> — In the event of a data breach, we will notify affected users within 72 hours of becoming aware of the incident.</li>
+      </ul>
+    </div>
+
+    <!-- 9. Contact -->
+    <div class="section" id="contact">
+      <div class="section-header">
+        <span class="section-num">09</span>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please reach out:</p>
+      <div class="contact-card">
+        <p><strong>MarSci Team</strong></p>
+        <p>Email: <a href="mailto:hello@marsci-diagnostics.com">hello@marsci-diagnostics.com</a></p>
+        <p>Website: <a href="https://app.marsci-diagnostics.com">app.marsci-diagnostics.com</a></p>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-muted);">We aim to respond to all privacy-related inquiries within 3 business days.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 MarSci Diagnostics. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy" class="active-page">Privacy</a></li>
+      <li><a href="/legal/terms">Terms</a></li>
+      <li><a href="mailto:hello@marsci-diagnostics.com">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // Mobile TOC toggle
+  function toggleMobileToc(btn) {
+    btn.classList.toggle('open');
+    document.getElementById('mobileTocBody').classList.toggle('open');
+  }
+
+  // Active TOC section on scroll
+  const sections = document.querySelectorAll('.section[id]');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Close mobile toc on link click
+  document.querySelectorAll('.mobile-toc-body a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('mobileTocBody').classList.remove('open');
+      document.querySelector('.mobile-toc-toggle').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>

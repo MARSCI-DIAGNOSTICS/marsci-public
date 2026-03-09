@@ -1,9 +1,11 @@
-﻿# Terms and Conditions
+# Terms and Conditions
 
 Last updated: March 6, 2026
 Version: terms_v1_0_0
 
-These Terms and Conditions are a draft for MarSci Diagnostics. They are intended to support product implementation and review. They are not final legal advice and may be updated after operational, billing, jurisdictional, or counsel review.
+Status: Prelaunch public legal pack
+
+These Terms and Conditions are part of the prelaunch public legal pack for MarSci Diagnostics. They describe the intended public contract position before general release and may be updated after operational, billing, jurisdictional, or counsel review is finalized.
 
 ## 1. Acceptance of Terms
 

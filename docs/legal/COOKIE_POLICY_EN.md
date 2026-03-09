@@ -1,8 +1,10 @@
-﻿# Cookie Policy
+# Cookie Policy
 
 Last updated: March 6, 2026
 
-This Cookie Policy is a draft for MarSci Diagnostics. It explains, at a high level, how cookies and similar technologies may be used in the website and application. It may change as the product and infrastructure develop.
+Status: Prelaunch public legal pack
+
+This Cookie Policy is part of the prelaunch public legal pack for MarSci Diagnostics. It explains the intended public approach to cookies and similar technologies before general release and may be updated as operations, infrastructure, or legal review are finalized.
 
 ## 1. What Are Cookies
 

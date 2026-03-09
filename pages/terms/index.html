@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms and Conditions — MarSci Diagnostics</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0A1A2F; --navy-mid: #0F2444; --navy-light: #162E52;
+      --gold: #D4A017; --gold-light: #E3B94B; --gold-dim: rgba(212,160,23,0.12);
+      --surface: #F5F1E6; --dark-base: #1E2329;
+      --white: #FFFFFF; --text: #3A3F47; --text-2: #6E7785; --text-3: #A9B3C1;
+      --border: #D6DBE3; --border-soft: #ECEAE2;
+      --info: #3F6AE0; --info-bg: #EBF0FC;
+      --warn-bg: #FEF9EC; --warn-border: rgba(240,180,41,0.3);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--surface); color: var(--text); line-height: 1.6; min-height: 100vh; }
+
+    .topnav { position: fixed; top: 0; left: 0; right: 0; height: 56px; background: linear-gradient(180deg, #0D1F38 0%, var(--navy) 100%); z-index: 200; display: flex; align-items: center; border-bottom: 1px solid var(--navy-light); box-shadow: 0 2px 12px rgba(0,0,0,0.35); }
+    .topnav-inner { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 30px; height: 30px; background: var(--gold); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: var(--navy); }
+    .logo-name { font-size: 14px; font-weight: 600; color: var(--white); }
+    .topnav-links { display: flex; align-items: center; gap: 6px; }
+    .topnav-links a { color: var(--text-3); text-decoration: none; font-size: 13px; padding: 6px 12px; border-radius: 6px; transition: color 0.15s, background 0.15s; }
+    .topnav-links a:hover { color: var(--white); background: var(--navy-light); }
+    .topnav-links a.cta { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 12px; }
+    .topnav-links a.cta:hover { background: var(--gold-light); }
+
+    .shell { display: flex; padding-top: 56px; min-height: 100vh; }
+
+    .sidebar { width: 260px; flex-shrink: 0; background: linear-gradient(180deg, #0D1F38 0%, var(--navy) 60%, #080F1C 100%); position: fixed; top: 56px; left: 0; bottom: 0; overflow-y: auto; border-right: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; box-shadow: 4px 0 24px rgba(0,0,0,0.3); }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 4px; }
+    .sidebar-head { padding: 24px 24px 18px; border-bottom: 1px solid var(--navy-light); }
+    .sidebar-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .sidebar-title { font-size: 14px; font-weight: 700; color: var(--white); line-height: 1.3; }
+    .sidebar-meta { font-size: 11px; color: var(--text-3); margin-top: 5px; }
+    .sidebar-nav { padding: 12px 10px; flex: 1; }
+    .sidebar-group-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-3); padding: 0 10px; margin: 14px 0 4px; }
+    .sidebar-group-label:first-child { margin-top: 4px; }
+    .toc-link { display: flex; align-items: center; gap: 9px; padding: 6px 10px; border-radius: 6px; text-decoration: none; color: var(--text-3); font-size: 12px; line-height: 1.4; transition: all 0.15s; margin-bottom: 1px; }
+    .toc-link:hover { background: var(--navy-light); color: var(--white); }
+    .toc-link.active { background: var(--gold-dim); color: var(--gold); }
+    .toc-link.active .toc-num { background: var(--gold); color: var(--navy); }
+    .toc-num { width: 18px; height: 18px; background: var(--navy-light); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; flex-shrink: 0; color: var(--text-3); transition: all 0.15s; }
+    .sidebar-footer { padding: 14px 20px; border-top: 1px solid var(--navy-light); }
+    .sidebar-footer-label { font-size: 10px; color: var(--text-3); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.8px; }
+    .sidebar-footer a { display: block; font-size: 12px; color: var(--text-3); text-decoration: none; padding: 3px 0; transition: color 0.15s; }
+    .sidebar-footer a:hover { color: var(--gold); }
+
+    .main { margin-left: 260px; flex: 1; min-width: 0; }
+    .page-hero { background: linear-gradient(135deg, #08152A 0%, #0A1A2F 50%, #0D2040 100%); padding: 44px 64px 36px; border-bottom: 2px solid var(--gold); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+    .page-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(212,160,23,0.09) 0%, transparent 65%); pointer-events: none; }
+    .page-hero::after { content: ''; position: absolute; bottom: -40px; left: 40px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(63,106,224,0.05) 0%, transparent 70%); pointer-events: none; }
+    .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-3); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--text-3); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb-sep { font-size: 10px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; background: var(--gold-dim); border: 1px solid rgba(212,160,23,0.25); padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .hero-eyebrow-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+    .hero-title { font-size: 32px; font-weight: 700; color: var(--white); letter-spacing: -0.8px; margin-bottom: 14px; }
+    .hero-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .hero-meta-item { font-size: 12px; color: var(--text-3); }
+    .meta-div { width: 1px; height: 12px; background: var(--navy-light); }
+
+    .content-area { max-width: 740px; padding: 48px 64px 80px; }
+    .intro-text { font-size: 15px; line-height: 1.8; color: var(--text-2); padding-bottom: 36px; border-bottom: 1px solid var(--border-soft); margin-bottom: 48px; }
+
+    .section { margin-bottom: 52px; scroll-margin-top: 80px; opacity: 0; transform: translateY(14px); animation: fadeUp 0.4s forwards; }
+    .section:nth-child(1){animation-delay:0.04s}.section:nth-child(2){animation-delay:0.07s}.section:nth-child(3){animation-delay:0.10s}.section:nth-child(4){animation-delay:0.13s}.section:nth-child(5){animation-delay:0.16s}.section:nth-child(6){animation-delay:0.19s}.section:nth-child(7){animation-delay:0.22s}.section:nth-child(8){animation-delay:0.25s}.section:nth-child(9){animation-delay:0.27s}.section:nth-child(10){animation-delay:0.29s}.section:nth-child(11){animation-delay:0.31s}.section:nth-child(12){animation-delay:0.33s}.section:nth-child(13){animation-delay:0.35s}.section:nth-child(14){animation-delay:0.37s}.section:nth-child(15){animation-delay:0.39s}.section:nth-child(16){animation-delay:0.40s}.section:nth-child(17){animation-delay:0.41s}.section:nth-child(18){animation-delay:0.42s}.section:nth-child(19){animation-delay:0.43s}.section:nth-child(20){animation-delay:0.44s}
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    .section-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+    .sec-badge { width: 30px; height: 30px; background: var(--navy); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .sec-badge::after { content: ''; position: absolute; inset: -1px; border-radius: 8px; border: 1px solid var(--gold); opacity: 0.35; }
+    .sec-badge span { font-size: 10px; font-weight: 800; color: var(--gold); }
+    .section h2 { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: -0.2px; }
+
+    .body-text { font-size: 14px; color: var(--text-2); line-height: 1.75; margin-bottom: 10px; }
+    .body-text:last-child { margin-bottom: 0; }
+    .body-text strong { color: var(--text); font-weight: 600; }
+    .body-text a { color: var(--info); text-decoration: none; font-weight: 600; }
+
+    .item-list { list-style: none; margin: 8px 0; }
+    .item-list li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border-soft); font-size: 14px; line-height: 1.6; color: var(--text-2); }
+    .item-list li:last-child { border-bottom: none; }
+    .item-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+    .item-list li strong { color: var(--text); font-weight: 600; }
+
+    .callout { display: flex; align-items: flex-start; gap: 12px; background: var(--info-bg); border: 1px solid rgba(63,106,224,0.2); border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .callout-icon { font-size: 13px; font-weight: 700; color: var(--info); flex-shrink: 0; margin-top: 1px; }
+    .callout p { font-size: 13px; color: #1a3a80; line-height: 1.6; margin: 0; }
+    .callout a { color: var(--info); text-decoration: none; font-weight: 600; }
+
+    .warn-callout { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .warn-callout p { font-size: 13px; color: #78350f; line-height: 1.6; }
+
+    .thai-box { background: rgba(212,160,23,0.06); border: 1px solid rgba(212,160,23,0.2); border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+    .thai-box-title { font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .thai-box p { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+    .thai-box strong { color: var(--text); font-weight: 700; }
+
+    .plan-table { width: 100%; border-collapse: collapse; margin: 14px 0; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .plan-table thead tr { background: linear-gradient(135deg, #0D1F38 0%, var(--navy) 100%); }
+    .plan-table th { padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-3); }
+    .plan-table th:first-child { color: var(--gold); }
+    .plan-table td { padding: 12px 16px; font-size: 14px; color: var(--text-2); border-bottom: 1px solid var(--border-soft); background: var(--white); }
+    .plan-table tr:last-child td { border-bottom: none; }
+    .plan-table td strong { color: var(--text); font-weight: 700; }
+
+    .contact-card { background: linear-gradient(135deg, #08152A 0%, var(--navy) 100%); border-radius: 12px; padding: 26px 30px; margin-top: 60px; display: flex; align-items: flex-start; gap: 18px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .contact-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
+    .contact-icon-wrap { width: 44px; height: 44px; background: var(--gold-dim); border: 1px solid rgba(212,160,23,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+    .contact-card h3 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .contact-card p { font-size: 13px; color: var(--text-3); line-height: 1.6; margin-bottom: 3px; }
+    .contact-card a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .contact-card a:hover { color: var(--gold-light); }
+
+    footer { background: linear-gradient(180deg, var(--navy) 0%, #080F1C 100%); border-top: 1px solid var(--navy-light); margin-left: 260px; }
+    .footer-inner { max-width: 740px; padding: 22px 64px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .footer-copy { font-size: 12px; color: var(--text-3); }
+    .footer-links { display: flex; gap: 0; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: var(--text-3); text-decoration: none; padding: 3px 10px; transition: color 0.15s; border-left: 1px solid var(--navy-light); }
+    .footer-links a:first-child { border-left: none; padding-left: 0; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-links a.curr { color: var(--gold); font-weight: 600; }
+
+    @media (max-width: 900px) {
+      .sidebar { display: none; } .main { margin-left: 0; } footer { margin-left: 0; }
+      .content-area { padding: 28px 20px 60px; } .page-hero { padding: 28px 20px 24px; } .hero-title { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="/" class="logo"><span class="logo-mark">M</span><div><div class="logo-name">MarSci Diagnostics</div></div></a>
+    <div class="topnav-links">
+      <a href="/">Home</a><a href="/pricing">Pricing</a><a href="/login" class="cta">Login</a>
+    </div>
+  </div>
+</nav>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-label">Legal Document</div>
+      <div class="sidebar-title">Terms and Conditions</div>
+      <div class="sidebar-meta">v1.0.0 &nbsp;·&nbsp; March 6, 2026</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-group-label">Contents</div>
+      <a href="#s1"  class="toc-link active"><span class="toc-num">1</span>Acceptance of Terms</a>
+      <a href="#s2"  class="toc-link"><span class="toc-num">2</span>Eligibility &amp; Account</a>
+      <a href="#s3"  class="toc-link"><span class="toc-num">3</span>Permitted Use</a>
+      <a href="#s4"  class="toc-link"><span class="toc-num">4</span>Prohibited Use</a>
+      <a href="#s5"  class="toc-link"><span class="toc-num">5</span>Subscription &amp; Billing</a>
+      <a href="#s6"  class="toc-link"><span class="toc-num">6</span>Renewals &amp; Cancellation</a>
+      <a href="#s7"  class="toc-link"><span class="toc-num">7</span>Refunds</a>
+      <a href="#s8"  class="toc-link"><span class="toc-num">8</span>Intellectual Property</a>
+      <a href="#s9"  class="toc-link"><span class="toc-num">9</span>Diagnostic Outputs</a>
+      <a href="#s10" class="toc-link"><span class="toc-num">10</span>No Professional Advice</a>
+      <a href="#s11" class="toc-link"><span class="toc-num">11</span>No Performance Guarantee</a>
+      <a href="#s12" class="toc-link"><span class="toc-num">12</span>Service Availability</a>
+      <a href="#s13" class="toc-link"><span class="toc-num">13</span>Limitation of Liability</a>
+      <a href="#s14" class="toc-link"><span class="toc-num">14</span>Indemnification</a>
+      <a href="#s15" class="toc-link"><span class="toc-num">15</span>Force Majeure</a>
+      <a href="#s16" class="toc-link"><span class="toc-num">16</span>Suspension &amp; Termination</a>
+      <a href="#s17" class="toc-link"><span class="toc-num">17</span>Changes to Service</a>
+      <a href="#s18" class="toc-link"><span class="toc-num">18</span>Governing Law</a>
+      <a href="#s19" class="toc-link"><span class="toc-num">19</span>Jurisdiction</a>
+      <a href="#s20" class="toc-link"><span class="toc-num">20</span>Contact</a>
+      <div class="sidebar-group-label">Legal</div>
+      <a href="/legal/privacy"      class="toc-link"><span class="toc-num" style="font-size:8px">P</span>Privacy Policy</a>
+      <a href="/legal/cookies"      class="toc-link"><span class="toc-num" style="font-size:8px">C</span>Cookie Policy</a>
+      <a href="/legal/data-rights"  class="toc-link"><span class="toc-num" style="font-size:8px">D</span>Data Rights</a>
+      <a href="/legal/subprocessors" class="toc-link"><span class="toc-num" style="font-size:8px">S</span>Subprocessors</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-footer-label">Contact</div>
+      <a href="mailto:support@marsci-diagnostics.com">support@marsci-diagnostics.com</a>
+      <a href="/" style="margin-top:6px;">← Back to Home</a>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="page-hero">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="/legal">Legal</a><span class="breadcrumb-sep">›</span>
+        <span>Terms and Conditions</span>
+      </div>
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Current &nbsp;·&nbsp; Governed by Thai Law</div>
+      <h1 class="hero-title">Terms and Conditions</h1>
+      <div class="hero-meta">
+        <span class="hero-meta-item">Last updated: <strong>March 6, 2026</strong></span>
+        <span class="meta-div"></span>
+        <span class="hero-meta-item">Version <strong>terms_v1_0_0</strong></span>
+        <span class="meta-div"></span>
+        <span class="hero-meta-item">Jurisdiction: <strong>Thailand</strong></span>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <p class="intro-text">These Terms and Conditions govern your access to and use of MarSci Diagnostics. By accessing or using the service, you agree to be bound by these Terms. If you do not agree, do not use the service. These Terms are governed by the <strong>laws of Thailand</strong>.</p>
+
+      <div class="section" id="s1">
+        <div class="section-head"><div class="sec-badge"><span>1</span></div><h2>Acceptance of Terms</h2></div>
+        <p class="body-text">By accessing or using MarSci Diagnostics, you agree to these Terms and Conditions. If you do not agree, do not use the service.</p>
+      </div>
+
+      <div class="section" id="s2">
+        <div class="section-head"><div class="sec-badge"><span>2</span></div><h2>Eligibility and Account Responsibility</h2></div>
+        <p class="body-text">You must be legally able to enter into a binding agreement to use MarSci Diagnostics. You are responsible for:</p>
+        <ul class="item-list">
+          <li><div>Maintaining control of your account</div></li>
+          <li><div>Protecting your login credentials and access devices</div></li>
+          <li><div>All activities conducted through your account</div></li>
+          <li><div>Providing accurate and current account information where applicable</div></li>
+        </ul>
+        <p class="body-text" style="margin-top:10px;">Google OAuth may be used for account access. You are responsible for the security of the Google account used to sign in.</p>
+      </div>
+
+      <div class="section" id="s3">
+        <div class="section-head"><div class="sec-badge"><span>3</span></div><h2>Permitted Use</h2></div>
+        <p class="body-text">You may use MarSci Diagnostics for internal business analysis, KPI diagnostics, decision support, and related operational review, subject to these Terms.</p>
+      </div>
+
+      <div class="section" id="s4">
+        <div class="section-head"><div class="sec-badge"><span>4</span></div><h2>Prohibited Use</h2></div>
+        <p class="body-text">You may not:</p>
+        <ul class="item-list">
+          <li><div>Use the service in violation of applicable law</div></li>
+          <li><div>Interfere with or disrupt the service</div></li>
+          <li><div>Bypass access controls or rate limits</div></li>
+          <li><div>Scrape, extract, or bulk copy protected product outputs beyond permitted use</div></li>
+          <li><div><strong>Reverse engineer</strong> the product, hidden rule systems, pattern methods, or underlying logic</div></li>
+          <li><div>Attempt model extraction or systematic reconstruction of diagnostic logic or internal methods</div></li>
+          <li><div>Reproduce, resell, sublicense, or redistribute the service without authorization</div></li>
+          <li><div>Upload or process information you do not have the right to use</div></li>
+          <li><div>Use the service in a manner that violates advertising platform policies</div></li>
+          <li><div>Use the service to support unlawful, deceptive, or unauthorized business activity</div></li>
+        </ul>
+      </div>
+
+      <div class="section" id="s5">
+        <div class="section-head"><div class="sec-badge"><span>5</span></div><h2>Subscription and Billing Terms</h2></div>
+        <p class="body-text">Certain features require a paid subscription. Billing is handled through Stripe Checkout and related Stripe billing tools.</p>
+        <table class="plan-table">
+          <thead><tr><th>Plan</th><th>Scope</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Lite</strong></td><td>Core diagnostics features</td><td>Monthly subscription</td></tr>
+            <tr><td><strong>Pro</strong></td><td>Full features + advanced connectors</td><td>Monthly subscription</td></tr>
+            <tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Future — not yet available</td></tr>
+          </tbody>
+        </table>
+        <p class="body-text">Exact entitlements and cancellation behavior may depend on the billing implementation in effect at the time of use.</p>
+      </div>
+
+      <div class="section" id="s6">
+        <div class="section-head"><div class="sec-badge"><span>6</span></div><h2>Renewals and Cancellation</h2></div>
+        <p class="body-text">Paid subscriptions may renew automatically unless canceled in accordance with the billing settings made available at the time of purchase. The exact cancellation method, downgrade timing, and access-change timing may depend on the billing implementation in effect at that time.</p>
+      </div>
+
+      <div class="section" id="s7">
+        <div class="section-head"><div class="sec-badge"><span>7</span></div><h2>Refunds</h2></div>
+        <p class="body-text">Refund rules are not finalized. Refunds, if offered, will be governed by the refund policy published at the relevant time.</p>
+      </div>
+
+      <div class="section" id="s8">
+        <div class="section-head"><div class="sec-badge"><span>8</span></div><h2>Intellectual Property</h2></div>
+        <p class="body-text">MarSci Diagnostics and its related software, methods, pattern systems, projections, diagnostic structures, interfaces, documentation, and associated materials are owned by MarSci Diagnostics or its licensors.</p>
+        <div class="callout"><div class="callout-icon">ℹ</div><p>This includes protected internal logic that may not be fully exposed in public outputs. Public KPI output may intentionally hide portions of internal methodology for IP and system integrity reasons. No rights are granted to the underlying product, methodology, or source materials beyond limited use rights.</p></div>
+      </div>
+
+      <div class="section" id="s9">
+        <div class="section-head"><div class="sec-badge"><span>9</span></div><h2>Diagnostic Outputs and Limitations</h2></div>
+        <p class="body-text">MarSci Diagnostics is a KPI Diagnostic System providing informational outputs to support business and marketing decision-making. Outputs are not guaranteed results.</p>
+        <p class="body-text">The service is <strong>not</strong>: a CRM, a media buying platform, a bid automation tool, a consumer social network, or a medical, legal, or financial advisory platform.</p>
+        <div class="warn-callout"><p>You remain responsible for interpreting outputs, validating actions, and making final business decisions.</p></div>
+      </div>
+
+      <div class="section" id="s10">
+        <div class="section-head"><div class="sec-badge"><span>10</span></div><h2>No Professional Advice</h2></div>
+        <p class="body-text">MarSci Diagnostics provides informational diagnostic tools only. The service and its outputs do not constitute legal, financial, accounting, tax, investment, media-buying, operational, or business advice.</p>
+        <p class="body-text">You remain solely responsible for reviewing outputs, evaluating business context, obtaining professional advice where needed, and making decisions based on your own judgment.</p>
+      </div>
+
+      <div class="section" id="s11">
+        <div class="section-head"><div class="sec-badge"><span>11</span></div><h2>No Performance Guarantee</h2></div>
+        <p class="body-text">MarSci Diagnostics does not guarantee campaign performance, KPI recovery, revenue outcomes, cost reduction, return on investment, business growth, or any other commercial result. Diagnostic outputs are not guarantees of success. Any corrective action or performance outcome remains subject to the user's execution, external platform behavior, market conditions, data quality, and other factors outside the service's control.</p>
+      </div>
+
+      <div class="section" id="s12">
+        <div class="section-head"><div class="sec-badge"><span>12</span></div><h2>Service Availability and Disclaimer</h2></div>
+        <p class="body-text">To the maximum extent permitted by applicable law, the service is provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis. We do not warrant that the service will be uninterrupted, error-free, or suitable for every use case.</p>
+      </div>
+
+      <div class="section" id="s13">
+        <div class="section-head"><div class="sec-badge"><span>13</span></div><h2>Limitation of Liability</h2></div>
+        <p class="body-text">To the maximum extent permitted by applicable law, MarSci Diagnostics and its affiliates, officers, employees, contractors, and licensors will not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or for any loss of profits, revenue, goodwill, data, or anticipated savings arising out of or related to the service.</p>
+        <p class="body-text">Total aggregate liability shall not exceed the total amount paid by the customer during the <strong>twelve (12) months</strong> preceding the event giving rise to the claim.</p>
+      </div>
+
+      <div class="section" id="s14">
+        <div class="section-head"><div class="sec-badge"><span>14</span></div><h2>Indemnification</h2></div>
+        <p class="body-text">You agree to defend, indemnify, and hold harmless MarSci Diagnostics, its affiliates, officers, employees, contractors, and licensors from and against claims, liabilities, damages, losses, costs, and expenses arising out of or related to:</p>
+        <ul class="item-list">
+          <li><div>Your misuse of the service</div></li>
+          <li><div>Your unlawful or unauthorized use of data</div></li>
+          <li><div>Your violation of applicable law, advertising platform rules, or third-party terms</div></li>
+          <li><div>Your improper implementation of recommendations or outputs</div></li>
+          <li><div>Content, data, or materials you submit or connect to the service</div></li>
+          <li><div>Your breach of these Terms</div></li>
+        </ul>
+      </div>
+
+      <div class="section" id="s15">
+        <div class="section-head"><div class="sec-badge"><span>15</span></div><h2>Force Majeure</h2></div>
+        <p class="body-text">MarSci Diagnostics will not be liable for delay, failure, or degraded service caused by events beyond its reasonable control, including acts of God, natural disasters, war, civil unrest, regulatory actions, internet or network failures, infrastructure failures, utility outages, third-party provider outages, or other external service disruptions.</p>
+      </div>
+
+      <div class="section" id="s16">
+        <div class="section-head"><div class="sec-badge"><span>16</span></div><h2>Suspension and Termination</h2></div>
+        <p class="body-text">We may suspend, limit, or terminate access where reasonably necessary, including for: security concerns, suspected misuse, unpaid subscriptions, legal compliance, abusive behavior, or violations of these Terms.</p>
+        <p class="body-text">You may stop using the service at any time, subject to any applicable billing commitments.</p>
+      </div>
+
+      <div class="section" id="s17">
+        <div class="section-head"><div class="sec-badge"><span>17</span></div><h2>Changes to Service</h2></div>
+        <p class="body-text">We may change, suspend, or discontinue features, plans, integrations, pricing, or technical requirements. Some features described in documentation or drafts may not yet be available or may change before release.</p>
+      </div>
+
+      <div class="section" id="s18">
+        <div class="section-head"><div class="sec-badge"><span>18</span></div><h2>Governing Law</h2></div>
+        <div class="thai-box">
+          <div class="thai-box-title">Thai Law Applies</div>
+          <p>This agreement shall be governed by the <strong>laws of Thailand</strong>, including the Civil and Commercial Code, the Computer Crimes Act, the Personal Data Protection Act (PDPA), and other applicable Thai legislation.</p>
+        </div>
+      </div>
+
+      <div class="section" id="s19">
+        <div class="section-head"><div class="sec-badge"><span>19</span></div><h2>Jurisdiction</h2></div>
+        <div class="thai-box">
+          <div class="thai-box-title">Thai Courts</div>
+          <p>Disputes arising out of or relating to these Terms or the use of MarSci Diagnostics shall be subject to the <strong>jurisdiction of Thai courts</strong>.</p>
+        </div>
+      </div>
+
+      <div class="section" id="s20">
+        <div class="section-head"><div class="sec-badge"><span>20</span></div><h2>Contact Information</h2></div>
+        <p class="body-text">For questions regarding these Terms:</p>
+        <ul class="item-list">
+          <li><div><a href="mailto:support@marsci-diagnostics.com">support@marsci-diagnostics.com</a></div></li>
+          <li><div><a href="mailto:admin@marsci-diagnostics.com">admin@marsci-diagnostics.com</a></div></li>
+        </ul>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon-wrap">&#9993;</div>
+        <div>
+          <h3>Questions About These Terms</h3>
+          <p>Contact us at:</p>
+          <a href="mailto:support@marsci-diagnostics.com">support@marsci-diagnostics.com</a>
+          <p style="margin-top:4px; font-size:12px; opacity:0.6;">Governed by the laws of Thailand. Disputes subject to Thai court jurisdiction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 MarSci Diagnostics &nbsp;·&nbsp; Operated from Thailand</span>
+    <div class="footer-links">
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/terms" class="curr">Terms</a>
+      <a href="/legal/cookies">Cookies</a>
+      <a href="/legal/data-rights">Data Rights</a>
+      <a href="/legal/subprocessors">Subprocessors</a>
+      <a href="mailto:support@marsci-diagnostics.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const links = document.querySelectorAll('.toc-link[href^="#"]');
+  const sections = document.querySelectorAll('.section[id]');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-60px 0px -55% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

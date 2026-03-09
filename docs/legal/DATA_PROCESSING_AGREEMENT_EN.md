@@ -1,15 +1,10 @@
-﻿# Data Processing Agreement
+# Data Processing Agreement
 
 Last updated: March 6, 2026
 
-This Data Processing Agreement ("DPA") is a draft for MarSci Diagnostics. It is intended as a working SaaS legal document and may require further review for specific customer relationships, jurisdictions, and infrastructure configurations.
+Status: Prelaunch public legal pack
 
-For purposes of this DPA:
-
-- the Customer acts as the Data Controller; and
-- MarSci Diagnostics acts as the Data Processor.
-
-MarSci Diagnostics processes marketing performance data on behalf of the Customer.
+This Data Processing Agreement ("DPA") is part of the prelaunch public legal pack for MarSci Diagnostics. It describes the intended public processing framework before general release and may require further review for specific customer relationships, jurisdictions, and infrastructure configurations.
 
 ## 1. Scope of Processing
 

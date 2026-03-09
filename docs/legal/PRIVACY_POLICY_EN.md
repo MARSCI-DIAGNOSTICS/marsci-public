@@ -3,7 +3,9 @@
 Last updated: March 6, 2026
 Version: privacy_v1_0_0
 
-This Privacy Policy is a draft for MarSci Diagnostics. It is intended to describe our current planned and partially implemented data practices in plain English. It is not final legal advice, and some sections may change as the product, infrastructure, and legal review process mature.
+Status: Prelaunch public legal pack
+
+This Privacy Policy is part of the prelaunch public legal pack for MarSci Diagnostics. It describes the intended public privacy position before general release and may be updated as operations, infrastructure, billing, or legal review are finalized.
 
 ## 1. Who We Are
 

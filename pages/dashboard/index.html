@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarSci Diagnostics - Dashboard</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body id="dashboard">
+  <nav>
+    <strong>MarSci Diagnostics</strong> | <a href="/">Home</a> | <a href="/dashboard">Dashboard</a> | <a href="#" onclick="MarSciAPI.clearAuthToken(); window.location.href='/login'">Logout</a>
+  </nav>
+
+  <header>
+    <h1>Diagnosis Dashboard</h1>
+    <p>Real-time marketing science insights powered by the KPI Pattern Engine.</p>
+  </header>
+
+  <section id="executive-summary">
+    <h2>Executive Overview</h2>
+    <div id="executive-overview"></div>
+  </section>
+
+  <section id="impact-tracking">
+    <h2>Impact summary</h2>
+    <div id="impact-summary"></div>
+  </section>
+
+  <section id="history">
+    <h2>Diagnosis History</h2>
+    <div id="history-list"></div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/dashboard.js"></script>
+</body>
+</html>

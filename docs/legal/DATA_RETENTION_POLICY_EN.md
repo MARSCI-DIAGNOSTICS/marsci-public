@@ -2,7 +2,9 @@
 
 Last updated: March 6, 2026
 
-This Data Retention Policy is a draft for MarSci Diagnostics. It describes the current intended retention approach for key SaaS data categories. Final retention schedules may change based on legal requirements, infrastructure changes, and product implementation details.
+Status: Prelaunch public legal pack
+
+This Data Retention Policy is part of the prelaunch public legal pack for MarSci Diagnostics. It describes the intended retention approach for key service data categories before general release and may be updated as legal requirements, infrastructure, or operating procedures are finalized.
 
 ## 1. Retention Principles
 

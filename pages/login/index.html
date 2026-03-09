@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>MarSci Diagnostics - Login</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .login-box {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .dev-login {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px dashed #ccc;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-box">
+    <h1>Login</h1>
+    <p>Access your marketing science dashboard.</p>
+    <div class="primary-login">
+      <a href="/auth/google/login" class="btn btn-primary" style="display: block; text-decoration: none;">Continue with
+        Google</a>
+      <a href="/auth/meta/login" class="btn btn-secondary" style="display: block; margin-top:12px; text-decoration: none;">Login with Facebook</a>
+    </div>
+
+    <div class="dev-login">
+      <h4>Engineering Access Portal</h4>
+      <p style="font-size: 11px; color: #666; margin-bottom: 15px;">Manual Session Injection (Dev Only)</p>
+      <input type="password" id="token-input" placeholder="Bearer JWT Token">
+      <button class="btn" id="btn-token-login">Inject Session</button>
+    </div>
+  </div>
+
+  <script src="/assets/js/api.js"></script>
+  <script>
+    document.getElementById('btn-token-login').addEventListener('click', () => {
+      const token = document.getElementById('token-input').value;
+      if (token) {
+        MarSciAPI.setAuthToken(token);
+        window.location.href = '/dashboard';
+      }
+    });
+
+    // If redirected with a token? (Not supported by backend yet, but good for future)
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+    if (token) {
+      MarSciAPI.setAuthToken(token);
+      window.location.href = '/dashboard';
+    }
+  </script>
+</body>
+
+</html>

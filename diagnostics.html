@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Engine - AFX</title>
+    <link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-content">
+            <h1 class="logo">AFX</h1>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="diagnostics.html" class="nav-link active">Diagnostics</a>
+                <a href="product.html" class="nav-link">Product</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>KPI Diagnostic Engine</h2>
+            <p>Submit your KPI metrics to identify performance patterns and root causes</p>
+        </div>
+
+        <div class="diagnostic-layout">
+            <!-- Input Form -->
+            <div class="diagnostic-panel">
+                <div class="panel-header">
+                    <h3>📊 Input Metrics</h3>
+                </div>
+
+                <form id="diagnosticForm" class="metric-form">
+                    <!-- Metric Pair 1 -->
+                    <div class="metric-group">
+                        <div class="metric-header">
+                            <label>Metric #1</label>
+                            <button type="button" class="btn-remove" onclick="removeMetricGroup(this)">Remove</button>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Metric ID</label>
+                                <input type="text" class="metric-id" placeholder="e.g., email_click_through_rate" value="email_click_through_rate">
+                            </div>
+                            <div class="form-group">
+                                <label>Current Value</label>
+                                <input type="number" class="current-value" placeholder="0.015" value="0.015" step="0.001">
+                            </div>
+                            <div class="form-group">
+                                <label>Baseline Value</label>
+                                <input type="number" class="baseline-value" placeholder="0.022" value="0.022" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metric Pair 2 -->
+                    <div class="metric-group">
+                        <div class="metric-header">
+                            <label>Metric #2</label>
+                            <button type="button" class="btn-remove" onclick="removeMetricGroup(this)">Remove</button>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Metric ID</label>
+                                <input type="text" class="metric-id" placeholder="e.g., tiktok_reach" value="tiktok_reach">
+                            </div>
+                            <div class="form-group">
+                                <label>Current Value</label>
+                                <input type="number" class="current-value" placeholder="68000" value="68000" step="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Baseline Value</label>
+                                <input type="number" class="baseline-value" placeholder="99000" value="99000" step="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="additionalMetrics"></div>
+
+                    <div class="form-actions">
+                        <button type="button" id="addMetricBtn" class="btn btn-secondary">+ Add Metric</button>
+                        <button type="submit" class="btn btn-primary">Analyze</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="diagnostic-panel results-panel">
+                <div class="panel-header">
+                    <h3>📈 Analysis Results</h3>
+                    <label class="debug-toggle">
+                        <input type="checkbox" id="debugToggle">
+                        Local Debug Mode
+                    </label>
+                </div>
+
+                <div id="loading" style="display:none;" class="loading">
+                    <p>Analyzing metrics...</p>
+                </div>
+
+                <div id="results" style="display:none;">
+                    <!-- Public Output -->
+                    <div class="result-section">
+                        <h4>📋 Diagnosis</h4>
+                        <div id="diagnosis" class="result-box"></div>
+                    </div>
+
+                    <!-- Visible KPIs -->
+                    <div class="result-section">
+                        <h4>🎯 Key Metrics (Visible - Max 2)</h4>
+                        <div id="visibleKpis" class="kpi-grid"></div>
+                    </div>
+
+                    <!-- Safe Pattern -->
+                    <div class="result-section">
+                        <h4>🔍 Identified Pattern</h4>
+                        <div id="pattern" class="result-box pattern-box"></div>
+                    </div>
+
+                    <!-- Investigation Suggestion -->
+                    <div class="result-section">
+                        <h4>💡 Recommended Investigation</h4>
+                        <div id="investigation" class="result-box"></div>
+                    </div>
+
+                    <!-- Confidence -->
+                    <div class="result-section">
+                        <h4>📊 Confidence Score</h4>
+                        <div id="confidence" class="confidence-bar"></div>
+                    </div>
+
+                    <!-- Debug Section (Local Only) -->
+                    <div id="debugSection" style="display:none;" class="debug-section">
+                        <div class="debug-warning">
+                            ⚠️ LOCAL DEBUG ONLY - Remove before production deployment
+                        </div>
+                        <h4>Internal Trace (DEBUG)</h4>
+                        <details>
+                            <summary>Show raw API response</summary>
+                            <pre id="debugTrace"></pre>
+                        </details>
+                    </div>
+
+                    <!-- Error Display -->
+                    <div id="errorMessage" style="display:none;" class="error-message"></div>
+                </div>
+
+                <div id="noResults" class="no-results">
+                    <p>Submit metrics above to analyze</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AFX. All rights reserved. | <a href="/legal/privacy.html">Privacy</a></p>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

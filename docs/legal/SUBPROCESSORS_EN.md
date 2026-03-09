@@ -2,7 +2,9 @@
 
 Last updated: March 6, 2026
 
-This page is a draft disclosure for MarSci Diagnostics. It identifies service providers that may process data in connection with operating the service. The list may change over time, and this page may be updated accordingly.
+Status: Prelaunch public legal pack
+
+This page is part of the prelaunch public legal pack for MarSci Diagnostics. It identifies service providers that may process data in connection with operating the service before general release. The list may change over time, and this page may be updated accordingly.
 
 ## 1. Purpose
 

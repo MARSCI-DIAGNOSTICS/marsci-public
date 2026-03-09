@@ -2,7 +2,9 @@
 
 Last updated: March 6, 2026
 
-This page is a draft process note for MarSci Diagnostics. It explains how users may request access, correction, deletion, or export of personal data, subject to applicable law, technical feasibility, and operational limitations.
+Status: Prelaunch public legal pack
+
+This page is part of the prelaunch public legal pack for MarSci Diagnostics. It explains the intended public process for requests relating to access, correction, deletion, or export of personal data before general release, subject to applicable law, technical feasibility, and operational limitations.
 
 ## 1. Request Types
 

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signing in — MarSci Diagnostics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0D1B2A;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      text-align: center;
+      padding: 48px 40px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 40px;
+      letter-spacing: 0.02em;
+    }
+
+    .logo span { color: #D4A855; }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(255,255,255,0.1);
+      border-top-color: #D4A855;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 24px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+    }
+
+    .success { display: none; }
+    .success .check {
+      width: 48px;
+      height: 48px;
+      background: rgba(16, 185, 129, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .error-state { display: none; }
+    .error-state .icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(239, 68, 68, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 28px;
+      background: #B8893A;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: #D4A855; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">MarSci <span>Diagnostics</span></div>
+
+  <!-- Loading state -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <h1>Signing you in…</h1>
+    <p>Just a moment</p>
+  </div>
+
+  <!-- Success state -->
+  <div id="success" class="success">
+    <div class="check">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M4 11l5 5 9-9" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Signed in successfully</h1>
+    <p>Redirecting to dashboard…</p>
+  </div>
+
+  <!-- Error state -->
+  <div id="error" class="error-state">
+    <div class="icon">⚠</div>
+    <h1>Sign in failed</h1>
+    <p id="errorMsg">Something went wrong. Please try again.</p>
+    <a href="https://api.marsci-diagnostics.com/api/oauth/login" class="btn">Try again</a>
+  </div>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get('token');
+  const provider = params.get('provider');
+  const message = params.get('message');
+
+  if (message) {
+    // Error from OAuth callback
+    showError(decodeURIComponent(message));
+
+  } else if (token) {
+    // Store token
+    localStorage.setItem('marsci_token', token);
+    localStorage.setItem('marsci_provider', provider || 'google');
+    localStorage.setItem('marsci_logged_in', 'true');
+
+    showSuccess();
+
+    // Redirect to dashboard after short delay
+    setTimeout(() => {
+      window.location.href = '/dashboard';
+    }, 1500);
+
+  } else {
+    showError('No authentication token received.');
+  }
+
+  function showSuccess() {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  }
+
+  function showError(msg) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('errorMsg').textContent = msg;
+    document.getElementById('error').style.display = 'block';
+  }
+</script>
+</body>
+</html>

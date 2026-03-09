@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — MarSci Diagnostics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:       #0D1B2A;
+      --navy-mid:   #162236;
+      --navy-soft:  #1E3050;
+      --brass:      #B8893A;
+      --brass-light:#D4A855;
+      --cream:      #F5F1EA;
+      --cream-dark: #EDE8DF;
+      --text:       #1C2B3A;
+      --text-muted: #6B7C8D;
+      --border:     #D8D2C8;
+      --white:      #FFFFFF;
+      --sidebar-w:  260px;
+      --content-max:720px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid var(--navy-soft);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--brass-light); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-links .nav-cta {
+      background: var(--brass);
+      color: var(--white);
+      padding: 7px 18px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .nav-links .nav-cta:hover { background: var(--brass-light); }
+
+    .legal-hero {
+      background: var(--navy);
+      padding: 56px 40px 48px;
+      border-bottom: 1px solid rgba(184,137,58,0.25);
+    }
+
+    .legal-hero-inner { max-width: 1200px; margin: 0 auto; }
+
+    .legal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      margin-bottom: 20px;
+    }
+
+    .legal-badge::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--brass);
+    }
+
+    .legal-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .legal-meta {
+      color: rgba(255,255,255,0.45);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .legal-meta strong { color: rgba(255,255,255,0.7); font-weight: 400; }
+
+    .layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 76px;
+    }
+
+    .toc-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .toc-list {
+      list-style: none;
+      border-left: 2px solid var(--border);
+    }
+
+    .toc-list li { position: relative; }
+
+    .toc-list a {
+      display: block;
+      padding: 7px 0 7px 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+      line-height: 1.4;
+    }
+
+    .toc-list a:hover { color: var(--text); }
+
+    .toc-list a.active {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .toc-list li::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--brass);
+      transform: scaleY(0);
+      transition: transform 0.25s ease;
+      transform-origin: top;
+    }
+
+    .toc-list li:has(a.active)::before { transform: scaleY(1); }
+
+    .toc-num {
+      display: inline-block;
+      width: 20px;
+      font-size: 10px;
+      color: var(--brass);
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    .mobile-toc {
+      display: none;
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .mobile-toc-toggle {
+      width: 100%;
+      padding: 14px 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .mobile-toc-toggle svg { transition: transform 0.25s; }
+    .mobile-toc-toggle.open svg { transform: rotate(180deg); }
+
+    .mobile-toc-body { display: none; padding: 0 18px 14px; }
+    .mobile-toc-body.open { display: block; }
+    .mobile-toc-body ol { padding-left: 18px; }
+    .mobile-toc-body li { margin-bottom: 6px; }
+
+    .mobile-toc-body a {
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .mobile-toc-body a:hover { text-decoration: underline; }
+
+    .content { max-width: var(--content-max); }
+
+    .section {
+      margin-bottom: 52px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--brass);
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      color: var(--text);
+      font-size: 15.5px;
+      line-height: 1.8;
+      margin-bottom: 14px;
+      font-weight: 300;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    .section li {
+      font-size: 15.5px;
+      line-height: 1.8;
+      margin-bottom: 6px;
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    .section strong {
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .highlight-box {
+      background: var(--navy);
+      border-left: 3px solid var(--brass);
+      border-radius: 0 6px 6px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      color: rgba(255,255,255,0.85);
+      font-size: 14.5px;
+      margin: 0;
+    }
+
+    .highlight-box strong { color: var(--brass-light); }
+
+    .warn-box {
+      background: #fff8ed;
+      border: 1px solid #e5c97a;
+      border-left: 3px solid var(--brass);
+      border-radius: 0 6px 6px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .warn-box p {
+      color: #6b4c10;
+      font-size: 14.5px;
+      margin: 0;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-top: 12px;
+    }
+
+    .contact-card p { margin-bottom: 6px; }
+
+    .contact-card a {
+      color: var(--brass);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--navy-soft);
+      padding: 32px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+    .footer-links a.active-page { color: var(--brass-light); }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 32px 24px 60px;
+      }
+
+      .sidebar { display: none; }
+      .mobile-toc { display: block; }
+      .legal-hero { padding: 40px 24px 36px; }
+      nav { padding: 0 24px; }
+      .nav-links { gap: 20px; }
+      footer { padding: 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links .hide-mobile { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">MarSci <span>Diagnostics</span></a>
+    <ul class="nav-links">
+      <li class="hide-mobile"><a href="/">Home</a></li>
+      <li class="hide-mobile"><a href="/features">Features</a></li>
+      <li class="hide-mobile"><a href="/pricing">Pricing</a></li>
+      <li><a href="https://api.marsci-diagnostics.com/api/oauth/login" class="nav-cta">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-badge">Legal</div>
+    <h1>Terms of Service</h1>
+    <p class="legal-meta">Last updated: <strong>March 10, 2026</strong></p>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- DESKTOP SIDEBAR -->
+  <aside class="sidebar">
+    <div class="toc-label">Contents</div>
+    <ol class="toc-list">
+      <li><a href="#acceptance"><span class="toc-num">01</span> Acceptance of Terms</a></li>
+      <li><a href="#service"><span class="toc-num">02</span> Description of Service</a></li>
+      <li><a href="#account"><span class="toc-num">03</span> Account &amp; Access</a></li>
+      <li><a href="#use"><span class="toc-num">04</span> Acceptable Use</a></li>
+      <li><a href="#billing"><span class="toc-num">05</span> Subscription &amp; Billing</a></li>
+      <li><a href="#cancellation"><span class="toc-num">06</span> Cancellation &amp; Refunds</a></li>
+      <li><a href="#ip"><span class="toc-num">07</span> Intellectual Property</a></li>
+      <li><a href="#disclaimer"><span class="toc-num">08</span> Disclaimer of Warranties</a></li>
+      <li><a href="#liability"><span class="toc-num">09</span> Limitation of Liability</a></li>
+      <li><a href="#law"><span class="toc-num">10</span> Governing Law</a></li>
+      <li><a href="#changes"><span class="toc-num">11</span> Changes to Terms</a></li>
+      <li><a href="#contact"><span class="toc-num">12</span> Contact Us</a></li>
+    </ol>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- Mobile TOC -->
+    <div class="mobile-toc">
+      <button class="mobile-toc-toggle" onclick="toggleMobileToc(this)">
+        Jump to section
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="mobile-toc-body" id="mobileTocBody">
+        <ol>
+          <li><a href="#acceptance">Acceptance of Terms</a></li>
+          <li><a href="#service">Description of Service</a></li>
+          <li><a href="#account">Account &amp; Access</a></li>
+          <li><a href="#use">Acceptable Use</a></li>
+          <li><a href="#billing">Subscription &amp; Billing</a></li>
+          <li><a href="#cancellation">Cancellation &amp; Refunds</a></li>
+          <li><a href="#ip">Intellectual Property</a></li>
+          <li><a href="#disclaimer">Disclaimer of Warranties</a></li>
+          <li><a href="#liability">Limitation of Liability</a></li>
+          <li><a href="#law">Governing Law</a></li>
+          <li><a href="#changes">Changes to Terms</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="section" style="margin-bottom:40px;">
+      <p>These Terms of Service ("Terms") govern your use of MarSci Diagnostics ("the Service"), operated by MarSci Team ("we", "us", or "our"). By accessing or using the Service, you agree to be bound by these Terms. Please read them carefully.</p>
+    </div>
+
+    <!-- 1 -->
+    <div class="section" id="acceptance">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Acceptance of Terms</h2>
+      </div>
+      <p>By creating an account or using any part of the Service, you confirm that you have read, understood, and agree to these Terms and our <a href="/legal/privacy" style="color:var(--brass);text-decoration:none;font-weight:500;">Privacy Policy</a>.</p>
+      <p>If you are using the Service on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.</p>
+      <p>If you do not agree to these Terms, do not use the Service.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="section" id="service">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Description of Service</h2>
+      </div>
+      <p>MarSci Diagnostics is an AI-powered diagnostic tool for paid advertising performance. The Service analyzes data from connected advertising accounts (Meta Ads, Google Ads) to detect patterns, surface anomalies, and generate optimization recommendations.</p>
+      <div class="highlight-box">
+        <p><strong>Read-only access only.</strong> MarSci Diagnostics is a <strong>diagnostic and advisory tool</strong>. We never make changes to your ad campaigns, budgets, targeting, or creative. All access to advertising platforms is strictly read-only. You remain in full control of your ad accounts at all times.</p>
+      </div>
+      <p>We reserve the right to modify, suspend, or discontinue any part of the Service with reasonable notice.</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="section" id="account">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Account &amp; Access</h2>
+      </div>
+      <ul>
+        <li>You must be at least 18 years old to create an account.</li>
+        <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+        <li>You are responsible for all activity that occurs under your account.</li>
+        <li>You must notify us immediately at <a href="mailto:hello@marsci-diagnostics.com" style="color:var(--brass);text-decoration:none;font-weight:500;">hello@marsci-diagnostics.com</a> if you suspect unauthorized access to your account.</li>
+        <li>One account per person or organization. Creating multiple accounts to circumvent usage limits is prohibited.</li>
+      </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="section" id="use">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Acceptable Use</h2>
+      </div>
+      <p>You agree to use the Service only for lawful purposes. You must not:</p>
+      <ul>
+        <li>Attempt to reverse-engineer, decompile, or extract proprietary algorithms from the Service</li>
+        <li>Use automated scripts to access the Service in ways that exceed normal usage</li>
+        <li>Attempt to gain unauthorized access to other users' accounts or data</li>
+        <li>Use the Service to process data from advertising accounts you do not own or have authorization to access</li>
+        <li>Resell or redistribute diagnostic outputs as your own product without written permission</li>
+        <li>Interfere with the security or integrity of the Service or its underlying infrastructure</li>
+      </ul>
+      <p>Violation of these terms may result in immediate account suspension.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="section" id="billing">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Subscription &amp; Billing</h2>
+      </div>
+      <p>The Service is offered on a subscription basis. Subscription plans are described on the <a href="/pricing" style="color:var(--brass);text-decoration:none;font-weight:500;">Pricing page</a>.</p>
+      <ul>
+        <li><strong>Billing cycles</strong> — Plans are available on a monthly or annual basis. Annual plans are billed upfront.</li>
+        <li><strong>Payment processing</strong> — All payments are processed securely by <strong>Stripe</strong>. We do not store credit card numbers on our servers.</li>
+        <li><strong>Auto-renewal</strong> — Subscriptions renew automatically at the end of each billing period. You will receive an email reminder before renewal.</li>
+        <li><strong>Price changes</strong> — We will provide at least 30 days' notice before changing subscription prices. Continued use after the notice period constitutes acceptance.</li>
+        <li><strong>Taxes</strong> — Prices are exclusive of applicable taxes, which may vary by jurisdiction.</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="section" id="cancellation">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2>Cancellation &amp; Refunds</h2>
+      </div>
+      <ul>
+        <li><strong>Cancellation</strong> — You may cancel your subscription at any time from your account settings. Cancellation takes effect at the end of the current billing period. You retain access until then.</li>
+        <li><strong>Monthly plans</strong> — No refunds for partial months after cancellation.</li>
+        <li><strong>Annual plans</strong> — A prorated refund may be issued for the unused portion if you cancel within 14 days of the annual renewal date. After 14 days, no refund is issued for the remaining period.</li>
+        <li><strong>Free trials</strong> — If a free trial is available, you will not be charged until the trial ends. Cancel before the trial ends to avoid charges.</li>
+      </ul>
+      <div class="warn-box">
+        <p>To request a refund or dispute a charge, contact <a href="mailto:hello@marsci-diagnostics.com" style="color:var(--brass);text-decoration:none;font-weight:500;">hello@marsci-diagnostics.com</a> within 14 days of the charge.</p>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="section" id="ip">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2>Intellectual Property</h2>
+      </div>
+      <p><strong>Our IP</strong> — The Service, including its inference engine, diagnostic algorithms, visual design, trademarks, and documentation, is owned by MarSci Team and protected by applicable intellectual property laws. You may not copy, reproduce, or create derivative works without written permission.</p>
+      <p><strong>Your data</strong> — You retain full ownership of your advertising data and campaign information. By connecting your ad accounts, you grant us a limited license to process that data solely for the purpose of providing the Service to you.</p>
+      <p><strong>Diagnostic outputs</strong> — Reports and recommendations generated by the Service are provided for your internal business use. You may share them internally or with clients, but may not resell them as a standalone product.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="section" id="disclaimer">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2>Disclaimer of Warranties</h2>
+      </div>
+      <p>The Service is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, either express or implied.</p>
+      <p>We do not warrant that:</p>
+      <ul>
+        <li>The Service will be uninterrupted, error-free, or completely secure</li>
+        <li>Diagnostic outputs will be accurate, complete, or suitable for any particular business decision</li>
+        <li>Results from the Service will lead to improved advertising performance</li>
+      </ul>
+      <div class="highlight-box">
+        <p>Diagnostic recommendations are for <strong>informational purposes only</strong>. Always apply your own professional judgment before making changes to advertising campaigns or budgets.</p>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="section" id="liability">
+      <div class="section-header">
+        <span class="section-num">09</span>
+        <h2>Limitation of Liability</h2>
+      </div>
+      <p>To the maximum extent permitted by applicable law, MarSci Team shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+      <ul>
+        <li>Loss of revenue, profits, or business opportunities</li>
+        <li>Advertising losses resulting from decisions made based on diagnostic outputs</li>
+        <li>Data loss or corruption</li>
+        <li>Costs of substitute services</li>
+      </ul>
+      <p>Our total aggregate liability to you for any claims arising from your use of the Service shall not exceed the amount you paid us in the <strong>3 months preceding the claim</strong>.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="section" id="law">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <h2>Governing Law</h2>
+      </div>
+      <p>These Terms are governed by and construed in accordance with the laws of the <strong>Kingdom of Thailand</strong>, without regard to its conflict of law provisions.</p>
+      <p>Any disputes arising from these Terms or your use of the Service shall be subject to the exclusive jurisdiction of the courts located in Bangkok, Thailand.</p>
+      <p>If you are accessing the Service from outside Thailand, you are responsible for compliance with local laws.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="section" id="changes">
+      <div class="section-header">
+        <span class="section-num">11</span>
+        <h2>Changes to Terms</h2>
+      </div>
+      <p>We may update these Terms from time to time. When we do, we will:</p>
+      <ul>
+        <li>Update the "Last updated" date at the top of this page</li>
+        <li>Notify registered users by email at least <strong>14 days</strong> before material changes take effect</li>
+      </ul>
+      <p>Your continued use of the Service after the effective date of any changes constitutes your acceptance of the updated Terms.</p>
+      <p>If you do not agree with the updated Terms, you must stop using the Service and cancel your subscription before the changes take effect.</p>
+    </div>
+
+    <!-- 12 -->
+    <div class="section" id="contact">
+      <div class="section-header">
+        <span class="section-num">12</span>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have questions or concerns about these Terms, please contact us:</p>
+      <div class="contact-card">
+        <p><strong>MarSci Team</strong></p>
+        <p>Email: <a href="mailto:hello@marsci-diagnostics.com">hello@marsci-diagnostics.com</a></p>
+        <p>Website: <a href="https://app.marsci-diagnostics.com">app.marsci-diagnostics.com</a></p>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-muted);">We aim to respond to all legal inquiries within 5 business days.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 MarSci Diagnostics. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy">Privacy</a></li>
+      <li><a href="/legal/terms" class="active-page">Terms</a></li>
+      <li><a href="mailto:hello@marsci-diagnostics.com">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  function toggleMobileToc(btn) {
+    btn.classList.toggle('open');
+    document.getElementById('mobileTocBody').classList.toggle('open');
+  }
+
+  const sections = document.querySelectorAll('.section[id]');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  document.querySelectorAll('.mobile-toc-body a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('mobileTocBody').classList.remove('open');
+      document.querySelector('.mobile-toc-toggle').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>

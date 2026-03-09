@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MarSci Diagnostics - Result</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        .result-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .result-header {
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .evidence-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .action-list li {
+            margin-bottom: 10px;
+        }
+
+        .impact-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body id="result-page">
+    <nav>
+        <strong>MarSci Diagnostics</strong> | <a href="/dashboard">Dashboard</a> | <a href="#"
+            id="logout-btn">Logout</a>
+    </nav>
+
+    <div class="result-container">
+        <div id="result-view">
+            <div class="loading">Fetching diagnosis results...</div>
+        </div>
+    </div>
+
+    <script src="/assets/js/api.js"></script>
+    <script src="/assets/js/result.js"></script>
+</body>
+
+</html>
